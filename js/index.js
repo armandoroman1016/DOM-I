@@ -51,12 +51,9 @@ console.log(logo)
 // console.log(nav)
 
 const navLinks = Array.from(document.querySelectorAll('nav a'))
-navLinks[0].textContent = siteContent['nav']['nav-item-1']
-navLinks[1].textContent = siteContent['nav']['nav-item-2']
-navLinks[2].textContent = siteContent['nav']['nav-item-3']
-navLinks[3].textContent = siteContent['nav']['nav-item-4']
-navLinks[4].textContent = siteContent['nav']['nav-item-5']
-
+for(let i = 0; i < navLinks.length; i++){
+  navLinks[i].textContent = siteContent['nav'][`nav-item-${i + 1}`]
+  }
 
 const headerImg = document.getElementById('cta-img')
 headerImg.setAttribute('src', siteContent['cta']['img-src'])
@@ -96,6 +93,22 @@ contactSectionInfo[0].textContent = siteContent['contact']['address']
 contactSectionInfo[1].textContent = siteContent['contact']['phone']
 contactSectionInfo[2].textContent = siteContent['contact']['email']
 
+let footerSection = document.querySelector('footer p')
+footerSection.textContent = siteContent['footer']['copyright']
 
+for(let i = 0; i < navLinks.length; i++){
+navLinks[i].setAttribute('style', 'color:green;')
+}
 
+let newAnchor = document.createElement('a')
+let otherNewAnchor = document.createElement('a')
 
+newAnchor.textContent = 'Our Stuff'
+otherNewAnchor.textContent = 'More Stuff'
+
+document.querySelector('nav').appendChild(newAnchor)
+document.querySelector('nav').prepend(otherNewAnchor)
+
+for(let i = 0; i < navLinks.length; i++){
+  navLinks[i].setAttribute('style', 'color:green;')
+  }

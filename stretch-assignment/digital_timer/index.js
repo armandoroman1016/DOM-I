@@ -4,7 +4,11 @@ const msHundreds = document.querySelector('#msHundreds')
 const msTens = document.querySelector('#msTens')
 const digits = document.querySelectorAll('.num')
 
-const timerCounter = window.setInterval(cb, 10)
+
+// const timerCounter = window.setInterval(cb, ms)
+
+// function addTime(){
+// }
 
 function addTime(){
     const startingNum = 0

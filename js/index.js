@@ -86,17 +86,26 @@ let footerSection = document.querySelector('footer p')
 footerSection.textContent = siteContent['footer']['copyright']
 
 
+const nav = document.querySelector('nav')
+
 let newAnchor = document.createElement('a')
 let otherNewAnchor = document.createElement('a')
+let newNavItem = document.createElement('a')
+
 
 newAnchor.textContent = 'Our Stuff'
 otherNewAnchor.textContent = 'More Stuff'
+newNavItem.textContent = 'Middle Stuff'
 
 navLinks.push(newAnchor);
 navLinks.push(otherNewAnchor);
+navLinks.push(newNavItem);
 
+console.log(newNavItem)
 document.querySelector('nav').appendChild(newAnchor)
 document.querySelector('nav').prepend(otherNewAnchor)
+nav.insertBefore(newNavItem, nav.childNodes[8])
+
 
 for(let i = 0; i < navLinks.length; i++){
   navLinks[i].setAttribute('style', 'color:green;')

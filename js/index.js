@@ -93,6 +93,7 @@ let otherNewAnchor = document.createElement('a')
 let newNavItem = document.createElement('a')
 
 
+
 newAnchor.textContent = 'Our Stuff'
 otherNewAnchor.textContent = 'More Stuff'
 newNavItem.textContent = 'Middle Stuff'

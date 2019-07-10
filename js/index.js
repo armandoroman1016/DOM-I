@@ -46,6 +46,7 @@ for(let i = 0; i < navLinks.length; i++){
   navLinks[i].textContent = siteContent['nav'][`nav-item-${i + 1}`]
 }
 
+
 const headerImg = document.getElementById('cta-img')
 headerImg.setAttribute('src', siteContent['cta']['img-src'])
 

@@ -40,20 +40,12 @@ const siteContent = {
 // Example: Update the img src for the logo
 const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent['nav']['img-src'])
-console.log(logo)
-
-// const nav =  Array.from(document.querySelectorAll('nav a'))
-//   for (let i = 1; i < 7; i++){
-//     let counter = 0
-//     counter += 1
-//     nav[i].textContent = siteContent['nav'][`nav-item-${counter }`]
-//   }
-// console.log(nav)
 
 const navLinks = Array.from(document.querySelectorAll('nav a'))
 for(let i = 0; i < navLinks.length; i++){
   navLinks[i].textContent = siteContent['nav'][`nav-item-${i + 1}`]
-  }
+}
+
 
 const headerImg = document.getElementById('cta-img')
 headerImg.setAttribute('src', siteContent['cta']['img-src'])
@@ -68,9 +60,7 @@ const midImg = document.getElementById('middle-img')
 midImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
 let midContentHeadings = Array.from(document.querySelectorAll('.text-content h4'))
-// for(let i = 0; i < midContentHeadings.length; i++){
-//   midContentHeadings[i].textContent = siteContent['main-content']['h4']
-// }
+
 midContentHeadings[0].textContent = siteContent['main-content']['features-h4']
 midContentHeadings[1].textContent = siteContent['main-content']['about-h4']
 midContentHeadings[2].textContent = siteContent['main-content']['services-h4']
@@ -96,18 +86,28 @@ contactSectionInfo[2].textContent = siteContent['contact']['email']
 let footerSection = document.querySelector('footer p')
 footerSection.textContent = siteContent['footer']['copyright']
 
-for(let i = 0; i < navLinks.length; i++){
-navLinks[i].setAttribute('style', 'color:green;')
-}
+
+const nav = document.querySelector('nav')
 
 let newAnchor = document.createElement('a')
 let otherNewAnchor = document.createElement('a')
+let newNavItem = document.createElement('a')
+
+
 
 newAnchor.textContent = 'Our Stuff'
 otherNewAnchor.textContent = 'More Stuff'
+newNavItem.textContent = 'Middle Stuff'
 
+navLinks.push(newAnchor);
+navLinks.push(otherNewAnchor);
+navLinks.push(newNavItem);
+
+console.log(newNavItem)
 document.querySelector('nav').appendChild(newAnchor)
 document.querySelector('nav').prepend(otherNewAnchor)
+nav.insertBefore(newNavItem, nav.childNodes[8])
+
 
 for(let i = 0; i < navLinks.length; i++){
   navLinks[i].setAttribute('style', 'color:green;')
